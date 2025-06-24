@@ -53,7 +53,7 @@ public class ProcessoSeletivo {
             }
             tentativas++;
         }
-        System.out.println("Sem contato com " + candidato);
+        System.out.printf("Sem contato com %s\n", candidato);
     }
 
     static void imprimirSelecionados(){
