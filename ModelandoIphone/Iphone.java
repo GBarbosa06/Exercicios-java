@@ -8,6 +8,7 @@ public class Iphone {
 
         ReprodutorMusical reprodutorMusical = new ReprodutorMusical();
         AparelhoTelefonico aparelhoTelefonico = new AparelhoTelefonico();
+        NavegadorNaInternet navegadorNaInternet = new NavegadorNaInternet();
 
         do {
             System.out.println("Menu:");
@@ -78,10 +79,15 @@ public class Iphone {
                     scanner.nextLine(); // Consume newline
                     switch (browserOption) {
                         case 1:
+                            System.out.println("Digite a url: ");
+                            String url = scanner.nextLine();
+                            navegadorNaInternet.exibirPagina(url);
                             break;
                         case 2:
+                            navegadorNaInternet.adicionarNovaAba();
                             break;
                         case 3:
+                            navegadorNaInternet.atualizarPagina();
                             break;
                         default:
                             System.out.println("Opção inválida.");
