@@ -7,6 +7,7 @@ public class Iphone {
         int option;
 
         ReprodutorMusical reprodutorMusical = new ReprodutorMusical();
+        AparelhoTelefonico aparelhoTelefonico = new AparelhoTelefonico();
 
         do {
             System.out.println("Menu:");
@@ -54,10 +55,13 @@ public class Iphone {
                     scanner.nextLine(); // Consume newline
                     switch (phoneOption) {
                         case 1:
+                            aparelhoTelefonico.ligar("61993978640");
                             break;
                         case 2:
+                            aparelhoTelefonico.atender();
                             break;
                         case 3:
+                            aparelhoTelefonico.iniciarCorreioVoz();
                              break;
                         default:
                             System.out.println("Opção inválida.");
