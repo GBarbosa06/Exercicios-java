@@ -9,8 +9,10 @@ import java.awt.Font;
 import static java.awt.Font.PLAIN;
 
 import model.Space;
+import service.EventEnum;
+import service.EventListener;
 
-public class NumberText extends JTextField {
+public class NumberText extends JTextField implements EventListener {
 
     private final Space space;
 
@@ -54,6 +56,13 @@ public class NumberText extends JTextField {
             
         });
 
+    }
+
+    @Override
+    public void update(EventEnum eventType) {
+        if (eventType.equals(EventEnum.CLEAR_SPACE) && this.isEnabled()) {
+            this.setText("");
+        }
     }
 
 }

@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 
 import model.Space;
 import service.BoardService;
+import service.EventEnum;
+import service.NotifierService;
 import ui.custom.button.CheckgameStatusButton;
 import ui.custom.button.FinishGameButton;
 import ui.custom.button.ResetButton;
@@ -25,8 +27,7 @@ public class MainScreen {
     private final static Dimension dimension = new Dimension(600, 600);
 
     private final BoardService boardService;
-
-
+    private final NotifierService notifierService;
 
     private JButton finishGameButton;
     private JButton checkgameStatusButton;
@@ -35,6 +36,7 @@ public class MainScreen {
 
     public MainScreen(final Map<String, String> gameConfig){
         this.boardService = new BoardService(gameConfig);
+        this.notifierService = new NotifierService();
     }
 
     public void buildMainScreen(){
@@ -61,8 +63,8 @@ public class MainScreen {
 
     private List<Space> getSpacesFromSector(List<List<Space>> spaces, final int initCol, final int endCol, final int initRow, final int endRow){
         List<Space> spaceSector = new ArrayList<>();
-        for (int r = 0; r <= endRow; r++) {
-            for (int c = 0; c <= endCol; c++) {
+        for (int r = initRow; r <= endRow; r++) {
+            for (int c = initCol; c <= endCol; c++) {
                 spaceSector.add(spaces.get(c).get(r));
             }
         }
@@ -71,6 +73,7 @@ public class MainScreen {
 
     private JPanel generateSection(final List<Space> spaces){
         List<NumberText> fields = new ArrayList<>(spaces.stream().map(NumberText::new).toList());
+        fields.forEach(t -> notifierService.subscriber(EventEnum.CLEAR_SPACE, t));
         return new SudokuSector(fields);
     }
 
@@ -117,6 +120,7 @@ public class MainScreen {
                 );
                 if(dialogResult == 0){
                     boardService.reset();
+                    notifierService.notify(EventEnum.CLEAR_SPACE);
                 }
         });
         mainPanel.add(resetButton);
