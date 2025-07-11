@@ -10,10 +10,12 @@ public class Main {
         robo.mover();
         robo.mover();
         robo.setComportamento(defensivo);
-
+        
         robo.mover();
         robo.mover();
-
+        robo.mover();
+        
+        robo.setComportamento(agressivo);
         robo.mover();
         robo.mover();
     }
