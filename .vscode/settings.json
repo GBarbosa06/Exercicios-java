@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [
+    "sudoku/src",
+    "Design Patterns com Java/Strategy/src",
+    "Design Patterns com Java/Singleton/src",
+    "Design Patterns com Java/Facade/src",
+    "ApiRest/src/main/java/dio/ApiRest"
+  ]
+}
