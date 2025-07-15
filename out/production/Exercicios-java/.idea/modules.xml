@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Exercicios-java.iml" filepath="$PROJECT_DIR$/Exercicios-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Design Patterns com Java/Facade/Facade.iml" filepath="$PROJECT_DIR$/Design Patterns com Java/Facade/Facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Design Patterns com Java/Singleton/Singleton.iml" filepath="$PROJECT_DIR$/Design Patterns com Java/Singleton/Singleton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Design Patterns com Java/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/Design Patterns com Java/Strategy/Strategy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/controle-candidatos/controle-candidatos.iml" filepath="$PROJECT_DIR$/controle-candidatos/controle-candidatos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sudoku/sudoku.iml" filepath="$PROJECT_DIR$/sudoku/sudoku.iml" />
+    </modules>
+  </component>
+</project>
